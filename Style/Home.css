@@ -1,0 +1,643 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "proxima-nova", sans-serif;
+}
+#offer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 60;
+  padding: 5px 0;
+  position: relative;
+  height: 35px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: "Arial", sans-serif;
+}
+
+#Logo img {
+  height: 60px;
+}
+
+#Categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  padding: 8px 6px;
+  transition: color 0.2s ease;
+}
+
+.category.sale {
+  color: green;
+  padding: 8px 12px;
+}
+
+.category.season {
+  color: #0079c1;
+  padding: 8px 12px;
+}
+
+#navbar > div:nth-child(4) {
+  flex-grow: 1;
+  max-width: 30px;
+  margin: 0 10px;
+}
+
+#navbar input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+#navbar input[type="text"]:focus {
+  outline: none;
+  border-color: #0079c1;
+  box-shadow: 0 0 3px rgba(0, 121, 193, 0.5);
+}
+
+#navbar img[alt=""] {
+  cursor: pointer;
+  margin: 0 10px;
+  transition: opacity 0.2s ease;
+}
+#navbar img[alt=""]:hover {
+  opacity: 0.7;
+}
+#navbar img[alt=""][height="30"] {
+  height: 30px;
+}
+
+.slide-offer {
+  background-color: #f6f2ef;
+  font-size: 1rem;
+  color: black;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-offer.deal {
+  font-weight: bold;
+}
+.shopNow {
+  margin: 10px 5px;
+}
+strong {
+  margin-left: 5px;
+}
+
+@media (max-width: 1024px) {
+  #offer {
+    font-size: 0.7rem;
+  }
+  .slide-offer {
+    font-size: 0.7rem;
+  }
+  #Categories {
+    display: none;
+  }
+
+  #navbar {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 600px) {
+  #navbar input[type="text"] {
+    display: none;
+  }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.carousel {
+  display: flex;
+  animation: slide 6s infinite;
+}
+
+.slide img {
+  width: 100vw;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%,
+  50% {
+    transform: translateX(0%);
+  }
+  51%,
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.hero .btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.hero .btn:hover {
+  background-color: black;
+  color: white;
+}
+@media (max-width: 600px) {
+  .hero .btn {
+    background-color: black;
+    font-size: 0.8rem;
+    color: white;
+  }
+
+  .hero .btn:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.featured-categories {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  height: auto;
+}
+.category-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.category-card h3 {
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.cat-list {
+  text-align: center;
+  font-size: bold;
+  font-weight: 100;
+  color: rgb(177, 22, 22);
+  list-style-type: none;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  width: 50rem;
+  height: 10rem;
+  padding: 15px 20px;
+  display: none;
+  margin-top: 20px;
+}
+.cat-menu-opt-opt {
+  margin-top: 1rem;
+  list-style-type: none;
+  color: #444;
+  display: grid;
+  font-size: 0.8rem;
+  justify-content: start;
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+}
+
+.category:hover {
+  color: rgb(177, 22, 22);
+  .cat-list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+.bestsellers {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  h3 {
+    font-size: 0.6rem;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .video {
+    display: inline;
+  }
+}
+.video {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+  background-color: #000;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.product-card p {
+  margin: 10px 0;
+}
+
+#img1:hover {
+  content: url("../img/bestseller/CrushClog.jpg");
+}
+#img2:hover {
+  content: url("../img/bestseller/Literide3602.jpg");
+}
+#img3:hover {
+  content: url("../img/bestseller/RecoverySlide2.jpg");
+}
+#img4:hover {
+  content: url("../img/bestseller/Delco2.jpg");
+}
+#img5:hover {
+  content: url("../img/bestseller/Atmosphere2.jpg");
+}
+#img6:hover {
+  content: url("../img/bestseller/kittenHeel2.jpg");
+}
+
+#img7:hover {
+  content: url("../img/bestseller/BlackBag2.jpg");
+}
+
+#img8:hover {
+  content: url("../img/bestseller/BlackBoot2.jpg");
+}
+
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2; /* Allows this section to take up more space */
+  justify-content: space-around; /* Distribute link columns */
+  min-width: 300px; /* Minimum width before wrapping */
+  gap: 20px; /* Space between link columns */
+}
+
+/* Grouping for newsletter and address */
+.footer-newsletter-address {
+  display: flex;
+  flex-direction: column; /* Stack newsletter and address */
+  flex: 1; /* Allows this section to take up less space, but grow */
+  min-width: 280px; /* Minimum width for this column */
+  gap: 20px; /* Space between newsletter and address */
+}
+
+.footer-section {
+  /* flex: 1; Not needed here as child of a flex item, min-width on parent takes care */
+  padding: 0 10px; /* Add some internal padding */
+}
+
+.footer-section h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  border-bottom: 1px solid #333; /* Subtle separator */
+  padding-bottom: 8px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+/* Newsletter Section */
+.newsletter-section p {
+  color: #bbb;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column; /* Stack input and button on small screens */
+  gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 12px 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.95em;
+  width: 100%; /* Take full width of its container */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: #888;
+}
+
+.newsletter-form button {
+  padding: 12px 20px;
+  background-color: #007bff; /* A prominent blue for subscribe */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Take full width of its container */
+  box-sizing: border-box;
+}
+
+.newsletter-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Address Section */
+.address-section p {
+  color: #bbb;
+  font-size: 0.9em;
+}
+
+.address-section a {
+  color: #fff; /* Keep address links white */
+  text-decoration: underline; /* Underline address links */
+  display: block; /* Each address link on a new line */
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.address-section a:hover {
+  color: #007bff; /* Highlight address links on hover */
+}
+
+/* Social Links */
+ul.social-links {
+  display: flex;
+  flex-direction: column; /* Stack social links */
+  gap: 5px; /* Smaller gap for list items */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #333; /* Separator line */
+}
+
+.footer-bottom p {
+  color: #888;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .footer-content-wrapper {
+    flex-direction: column; /* Stack all main columns */
+    align-items: center; /* Center them */
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-newsletter-address {
+    width: 100%; /* Take full width when stacked */
+    max-width: 500px; /* Limit width on very wide screens when stacked */
+    margin-bottom: 20px; /* Space between stacked main sections */
+  }
+
+  .footer-links {
+    justify-content: center; /* Center the link columns */
+    gap: 30px; /* Increase gap between link columns when stacked */
+  }
+
+  .footer-section {
+    padding: 0; /* Remove horizontal padding when centered */
+  }
+
+  .footer-section h4 {
+    text-align: center;
+  }
+
+  .footer-section ul {
+    align-items: center;
+    display: flex; /* Make list items a flex container */
+    flex-direction: column;
+  }
+
+  .newsletter-form {
+    align-items: center;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-section h4 {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.contact-us {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(../img/crocsBG.png);
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-us-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 450px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 12px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 100%; /* Ensures inputs and textarea take full width */
+  resize: vertical; /* Allows vertical resizing of textarea */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #5c6bc0;
+  box-shadow: 0 0 5px rgba(92, 107, 192, 0.5);
+  outline: none;
+}
+
+.form-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+#submitbtn {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+#submitbtn:hover {
+  background-color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: #5c6bc0;
+  text-align: center;
+  margin-top: 15px;
+  display: block;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3f51b5;
+}
+
+/* Optional: Adjust for smaller screens */
+@media (max-width: 600px) {
+  .contact-us-container {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+.contact-info {
+  position: absolute;
+}

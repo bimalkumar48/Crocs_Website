@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Crocs™</title>
+    <link rel="stylesheet" href="../Style/LogIn.css" />
+    <link rel="icon" href="../icons/crocs.png" type="image/x-icon" />
+  </head>
+  </head>
+  <body>
+    <div class="main">
+      <div class="Login">
+        <form action="./Home.html" method="get">
+          <h2 class="form-title">Login</h2>
+          <br />
+          <input
+            type="email"
+            placeholder=" EMAIL *"
+            id="email"
+            pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ "
+            required 
+            title="Example:abcde23@gmal.com"
+          />
+
+          <input
+            type="password"
+            pattern="^(?=[^0-9]*[0-9][^0-9]*$)(?=[^!@#$%^&*]*[!@#$%^&*][^!@#$%^&*]*$)[A-Za-z0-9!@#$%^&*]{8,}$"
+            title="Password must be at least 8 characters long, include exactly one digit and exactly one special character (!@#$%^&*). Example:abcdef@1"
+            placeholder="PASSWORD *"
+            required
+          />
+          <br />
+          <!-- <input type="Submit"></input> -->
+          <button id="loginbtn" formmethod="post">Login</button>
+          <br />
+          <a href="./SignIn.html"><div>Create Account</div></a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
