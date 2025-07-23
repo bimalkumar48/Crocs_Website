@@ -1,20 +1,29 @@
-let email = "kumarbimal2002@gmail.com";
-let password = "Mynameisxyz@2";
-
 let login_form = document.getElementById("login-form");
 let Login_status = document.getElementById("status");
+
 login_form.addEventListener("submit", (e) => {
   e.preventDefault();
-  let userEmail = document.getElementById("email").value;
+
+  let userEmail = document.getElementById("email").value.trim();
   let userPassword = document.getElementById("password").value;
-  if (userEmail == email && userPassword == password) {
+
+  let userData = JSON.parse(sessionStorage.getItem(userEmail));
+
+  if (!userData) {
+    Login_status.style.color = "red";
+    Login_status.innerText = "User not found!";
+    return;
+  } else if (
+    userEmail === userData.email &&
+    userPassword === userData.password
+  ) {
     Login_status.style.color = "green";
-    Login_status.innerText = "Success";
+    Login_status.innerText = "Success!";
     setTimeout(() => {
       window.location.href = "../Structure/Home.html";
     }, 2000);
   } else {
     Login_status.style.color = "red";
-    Login_status.innerText = "Try Again";
+    Login_status.innerText = "Incorrect. Try again!";
   }
 });

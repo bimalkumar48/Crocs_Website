@@ -31,6 +31,7 @@ form {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
 select {
   padding: 12px;
   margin-bottom: 20px;
@@ -82,4 +83,19 @@ input[type="submit"]:hover {
 option:hover {
   background-color: black;
   color: white;
+}
+
+#registerbtn {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#registerbtn:hover {
+  background-color: grey;
 }
