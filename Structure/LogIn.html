@@ -6,12 +6,13 @@
     <title>Login Crocs™</title>
     <link rel="stylesheet" href="../Style/LogIn.css" />
     <link rel="icon" href="../icons/crocs.png" type="image/x-icon" />
+    <script src="../Functionality/LogIn.js" defer></script>
   </head>
   </head>
   <body>
     <div class="main">
       <div class="Login">
-        <form action="./Home.html" method="get">
+        <form id ="login-form">
           <h2 class="form-title">Login</h2>
           <br />
           <input
@@ -24,17 +25,20 @@
           />
 
           <input
+            id="password"
             type="password"
             pattern="^(?=[^0-9]*[0-9][^0-9]*$)(?=[^!@#$%^&*]*[!@#$%^&*][^!@#$%^&*]*$)[A-Za-z0-9!@#$%^&*]{8,}$"
             title="Password must be at least 8 characters long, include exactly one digit and exactly one special character (!@#$%^&*). Example:abcdef@1"
             placeholder="PASSWORD *"
             required
           />
+          
           <br />
           <!-- <input type="Submit"></input> -->
-          <button id="loginbtn" formmethod="post">Login</button>
+          <button id="loginbtn">Login</button>
           <br />
           <a href="./SignIn.html"><div>Create Account</div></a>
+          <span id="status"></span>
         </form>
       </div>
     </div>
