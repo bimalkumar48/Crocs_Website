@@ -258,6 +258,7 @@ strong {
 }
 .cat-user:hover {
   .cat-user-opt {
+    padding-top: 10px;
     text-align: center;
     font-weight: 100;
     list-style-type: none;
@@ -270,6 +271,7 @@ strong {
     height: 11rem;
     display: flex;
     row-gap: 8px;
+    cursor: pointer;
     flex-direction: column;
   }
 }
